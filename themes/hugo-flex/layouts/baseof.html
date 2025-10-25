@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+  <head>
+    {{ block "load_paginator" . }}{{ end }} {{ partial "meta.html" . }} {{
+    partial "title.html" . }} {{ partial "link.html" . }} {{ partial
+    "load_site_assets.html" . }} {{ block "load_page_assets" . }} {{ $noop :=
+    .Content }} {{ end }} {{ partial "assets.html" . }}
+    <!-- Font Awesome Free CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.1.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="M-contaner">
+      {{ partialCached "banner.html" . .IsHome }}
+      <main>
+        <div class="u-wrapper">
+          <div class="u-padding">{{ block "main" . }}{{ end }}</div>
+        </div>
+      </main>
+      {{ partialCached "footer.html" . }}
+    </div>
+  </body>
+</html>
