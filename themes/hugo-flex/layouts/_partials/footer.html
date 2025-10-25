@@ -1,9 +1,37 @@
 {{ with site.Params.footer }}
-  <footer class="Footer">
-    <div class="u-wrapper">
-      <div class="u-padding u-noboosting">
-        {{ safeHTML . }}
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="footer-container">
+      <!-- Column 1: Navigation -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Contact Info -->
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>123 Street Name, City, Country</p>
+        <p>Phone: <a href="tel:+911234567890">+91 1234567890</a></p>
+        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+      </div>
+
+      <!-- Column 3: Custom / Sustainability -->
+      <div class="footer-column">
+        <h3>Sustainability</h3>
+        <p>
+          We are committed to sustainable practices and creating a positive
+          impact on the environment through our projects and operations.
+        </p>
+        <a href="/sustainability" class="btn-footer">Learn More</a>
       </div>
     </div>
-  </footer>
+    <div class="u-padding u-noboosting">{{ safeHTML . }}</div>
+  </div>
+</footer>
 {{ end }}
