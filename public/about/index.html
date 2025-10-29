@@ -1,8 +1,60 @@
-<nav class="u-background">
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.152.1">
+  <title>About | My New Hugo Site</title>
+  <link href="https://foundationamarbelanand-blip.github.io/about/" rel="canonical">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+      <link href="/css/base.min.d5bbc19826902f72df7bc9669c80a714073fb78f1d69295f4255ff43004dd749.css" rel="stylesheet" integrity="sha256-1bvBmCaQL3Lfe8lmnICnFAc/t48daSlfQlX/QwBN10k=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
   <div class="u-wrapper">
     <div class="top-bar">
       <div class="top-left">
-        <!-- Email -->
+        
         <div
           class="top-item"
           style="display: flex; align-items: center; gap: 5px"
@@ -19,7 +71,7 @@
           </svg>
         </div>
 
-        <!-- Location -->
+        
         <div
           class="top-item"
           style="display: flex; align-items: center; gap: 5px"
@@ -52,7 +104,7 @@
             </svg>
           </a>
 
-          <!-- Twitter -->
+          
           <a href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +118,7 @@
             </svg>
           </a>
 
-          <!-- YouTube -->
+          
           <a href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +132,7 @@
             </svg>
           </a>
 
-          <!-- Instagram -->
+          
           <a href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -103,20 +155,34 @@
       </div>
       <div class="nav-bar-med">
         <ul class="Banner">
-          {{ range site.Menus.main }} {{ $url := relLangURL .URL }} {{ if isset
-          .Params "format" | and .Page }} {{ $url = (.Page.OutputFormats.Get
-          .Params.format).RelPermalink }} {{ end }}
+            
           <li class="Banner-item">
-            <a class="Banner-link u-clickable" href="{{ $url }}">{{ .Name }}</a>
+            <a class="Banner-link u-clickable" href="/about/">About</a>
           </li>
-          {{ end }}
+            
+          <li class="Banner-item">
+            <a class="Banner-link u-clickable" href="/">Posts</a>
+          </li>
+            
+          <li class="Banner-item">
+            <a class="Banner-link u-clickable" href="/tags/">Tags</a>
+          </li>
+            
+          <li class="Banner-item">
+            <a class="Banner-link u-clickable" href="/categories/">Categories</a>
+          </li>
+              
+          <li class="Banner-item">
+            <a class="Banner-link u-clickable" href="/feed.xml">RSS</a>
+          </li>
+          
         </ul>
       </div>
     </div>
   </div>
 </nav>
-<!-- Navigation Bar -->
-<!-- Mobile Navbar -->
+
+
 <nav class="nav-mobile">
   <div class="mobile-wrapper">
     <button class="menu-toggle" id="openBtn" onclick="toggleMenu()">☰</button>
@@ -124,42 +190,173 @@
 
     <div id="mobileMenu" class="mobile-menu">
 
-      {{ $currentPage := . }}
-      {{ range site.Menus.main }}
-        {{ $url := relLangURL .URL }}
-        {{ if and (isset .Params "format") .Page }}
-          {{ $url = (.Page.OutputFormats.Get .Params.format).RelPermalink }}
-        {{ end }}
+      
+      
+        
+        
         <div 
-          class="mobile-item {{ if .HasChildren }}has-submenu{{ end }}" 
+          class="mobile-item " 
           onclick="toggleMobileSubmenu(event, this)">
           
-          {{ if .URL }}
-            <a href="{{ $url }}" class="parent-link" {{ with .Params.target }}target="{{ . }}" rel="noopener noreferrer"{{ end }}>
-              {{ .Name }} 
-              {{ if .HasChildren }}<span class="submenu-toggle">▼</span>{{ end }}
+          
+            <a href="/about/" class="parent-link" >
+              About 
+              
             </a>
-          {{ else }}
-            <span class="parent-link">
-              {{ .Name }} 
-              {{ if .HasChildren }}<span class="submenu-toggle">▼</span>{{ end }}
-            </span>
-          {{ end }}
+          
 
-          {{ if .HasChildren }}
-            <div class="mobile-submenu">
-              {{ range .Children }}
-                <a href="{{ .URL | relLangURL }}" {{ with .Params.target }}target="{{ . }}" rel="noopener noreferrer"{{ end }}>
-                  {{ .Name }}
-                </a>
-              {{ end }}
-            </div>
-          {{ end }}
+          
         </div>
-      {{ end }}
+      
+        
+        
+        <div 
+          class="mobile-item " 
+          onclick="toggleMobileSubmenu(event, this)">
+          
+          
+            <span class="parent-link">
+              Posts 
+              
+            </span>
+          
+
+          
+        </div>
+      
+        
+        
+        <div 
+          class="mobile-item " 
+          onclick="toggleMobileSubmenu(event, this)">
+          
+          
+            <a href="/tags/" class="parent-link" >
+              Tags 
+              
+            </a>
+          
+
+          
+        </div>
+      
+        
+        
+        <div 
+          class="mobile-item " 
+          onclick="toggleMobileSubmenu(event, this)">
+          
+          
+            <a href="/categories/" class="parent-link" >
+              Categories 
+              
+            </a>
+          
+
+          
+        </div>
+      
+        
+        
+          
+        
+        <div 
+          class="mobile-item " 
+          onclick="toggleMobileSubmenu(event, this)">
+          
+          
+            <a href="/feed.xml" class="parent-link" >
+              RSS 
+              
+            </a>
+          
+
+          
+        </div>
+      
     </div>
   </div>
 </nav>
-<!-- Mobile Navbar end -->
 
 
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/about/" rel="bookmark">About</a>
+  </h1>
+  
+    
+      <time datetime="2025-10-29T18:45:04&#43;05:30">October 29, 2025</time>
+    
+  
+</header>
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="footer-container">
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>123 Street Name, City, Country</p>
+        <p>Phone: <a href="tel:+911234567890">+91 1234567890</a></p>
+        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+      </div>
+
+      
+      <div class="footer-column">
+        <h3>Sustainability</h3>
+        <p>
+          We are committed to sustainable practices and creating a positive
+          impact on the environment through our projects and operations.
+        </p>
+        <a href="/sustainability" class="btn-footer">Learn More</a>
+      </div>
+    </div>
+    <div class="u-padding u-noboosting">Except where otherwise noted, content on this site is licensed under a &#32; <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>.</div>
+  </div>
+</footer>
+
+
+  
+<script src="/js/main.min.0be73a3e5b897dcafd8388eae34950dbacd31d3c6e6b58d67cfdad279bbedd50.js" integrity="sha256-C&#43;c6PluJfcr9g4jq40lQ26zTHTxua1jWfP2tJ5u&#43;3VA="></script>
+
+</body>
+
+</html>
